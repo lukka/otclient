@@ -6,19 +6,21 @@ on:
       - master
       - v*
 
-    tags:
-      - v*
+#    tags:
+#      - v*
 
     paths:
       - cmake/**
       - src/**
       - CMakeLists.txt
+      - .github/**
 
   pull_request:
     paths:
       - cmake/**
       - src/**
       - CMakeLists.txt
+      - .github/**
 
 jobs:
   job:
@@ -97,7 +99,7 @@ jobs:
           vcpkgArguments: ${{ matrix.packages }}
           vcpkgDirectory: ${{ runner.workspace }}/vcpkg/
           vcpkgTriplet: ${{ matrix.triplet }}
-          vcpkgGitCommitId: 7db401cb1ef1fc559ec9f9ce814d064c328fd767
+          vcpkgGitCommitId: 2f7a104d4d6f1f3790db929f85a4086aa6973d7f
 
       - name: Build with CMake
         uses: lukka/run-cmake@v2
